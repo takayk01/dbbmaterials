@@ -23,7 +23,7 @@ def ler_arquivo(uploaded_file):
     df = df.drop(columns=["description"])    
     
     # Aplica Regra do arquivo
-    df["RESULT_DESCRIPTION"] = df["RESULT_DESCRIPTION"].apply(lambda x: " ".join(str(x).split()) if isinstance(x, str) else x)
+    df["RESULT_DESCRIPTION"] = df["RESULT_DESCRIPTION"].str.title()
 
     return df
 
